@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<title>Greeting Program</title>
+</head>
+<body>
+<h1>Welcome to the Greeting Program</h1>
+<label for="name">Enter your name: </label>
+<input type="text" id="name" placeholder="Your Name" />
+<button onclick="greetUser()">Greet Me!</button>
+<p id="greetingMessage"></p>
+<script>
+function greetUser() {
+const userName = document.getElementById('name').value;
+const currentHour = new Date().getHours();
+let greetingMessage = '';
+ if (currentHour < 12) {
+greetingMessage = 'Good Morning, ' + userName + '!';
+ } else if (currentHour < 18) {
+ greetingMessage = 'Good Afternoon, ' + userName + '!';
+ } else {
+ greetingMessage = 'Good Evening, ' + userName + '!';
+ }
+ document.getElementById('greetingMessage').textContent = greetingMessage;
+ }
+</script>
+</body>
+</html>
